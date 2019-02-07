@@ -1,5 +1,5 @@
 # Sudoku Solver
-[![Build Status](https://travis-ci.com/schuermannator/sudoku-solver.svg?branch=master)](https://travis-ci.com/schuermannator/sudoku-solver)  
+[![Build Status](https://travis-ci.com/schuermannator/sudoku-solver.svg?branch=master?sytle=flat-square)](https://travis-ci.com/schuermannator/sudoku-solver)  
 
 CLI Sudoku solver implemented in python with the python API for Z3 SMT solver.
 
