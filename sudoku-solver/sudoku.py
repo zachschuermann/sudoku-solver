@@ -131,7 +131,11 @@ if __name__ == '__main__':
             print()
             print(colors.WARNING + "Ran in {} ms".format(timer) + colors.ENDC)
             print()
-        again = input("Again? [y/N]")
+        try:
+            again = input("Again? [y/N]")
+        except EOFError:
+            print()
+            break
         if again != 'y' and again != 'Y' and again != 'yes':
             break
         else:

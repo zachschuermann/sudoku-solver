@@ -12,8 +12,17 @@ $ pip install -r requirements.txt
 ```bash
 $ python sudoku.py
 ```
+or with input from a file: 
+```bash
+$ python sudoku.py < test.txt
+```
 
 ## Test
 ```bash
 $ python -m unittest sudoku
+```
+
+## Distributing
+```bash
+$ python setup.py sdist bdist_wheel
 ```
