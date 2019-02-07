@@ -8,4 +8,5 @@ install:
 script:
   - python -m unittest sudoku_solve.sudoku
   - coverage run setup.py test
+after_success:
   - coveralls

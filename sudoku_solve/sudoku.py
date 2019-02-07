@@ -2,6 +2,7 @@
 
 from z3 import *
 import time
+from unittest.mock import patch
 import unittest
 
 # pretty colors for printing
@@ -101,6 +102,11 @@ class TestSolver(unittest.TestCase):
         print(solved)
         print("Solved in {} ms".format(time))
         self.assertIsNotNone(solved)
+
+    @patch('builtins.input', return_value='000000000')
+    def test_main(self, input):
+        main()
+        
 
 def main():
     print("Hello! Enter your puzzle below, one line at a time with '0' for empty.")

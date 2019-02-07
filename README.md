@@ -23,7 +23,7 @@ $ python sudoku.py < test.txt
 
 ## Test
 ```bash
-$ python -m unittest sudoku-solver.sudoku
+$ python -m unittest sudoku_solve.sudoku
 ```
 
 ## Distributing
