@@ -4,6 +4,17 @@ from z3 import *
 import time
 import unittest
 
+# pretty colors for printing
+class colors:
+    HEADER = '\033[95m'
+    OKBLUE = '\033[94m'
+    OKGREEN = '\033[92m'
+    WARNING = '\033[93m'
+    FAIL = '\033[91m'
+    ENDC = '\033[0m'
+    BOLD = '\033[1m'
+    UNDERLINE = '\033[4m'
+
 class Sudoku:
     def __init__(self, data=None):
         if data and data[0] and len(data) == len(data[0]) == 9:
@@ -105,20 +116,20 @@ if __name__ == '__main__':
         # try to make object
         puzzle = Sudoku(data=data_matrix)
         if not puzzle.data:
-            print("Invalid input, please try again")
+            print(colors.FAIL + "Invalid input, please try again" + colors.ENDC)
             continue
-        print("Running solver...")
+        print(colors.WARNING + "Running solver..." + colors.ENDC)
         solved, timer = puzzle.solve()
         if solved is not None:
-            print("Solved: ")
+            print(colors.OKGREEN + "Solved: " + colors.ENDC)
             print()
             print(solved)
-            print("Solved in {} ms".format(timer))
+            print(colors.OKBLUE + "Solved in {} ms".format(timer) + colors.ENDC)
             print()
         else:
-            print("Unable to solve.")
+            print(colors.FAIL + "Unable to solve." + colors.ENDC)
             print()
-            print("Ran in {} ms".format(timer))
+            print(colors.WARNING + "Ran in {} ms".format(timer) + colors.ENDC)
             print()
         again = input("Again? [y/N]")
         if again != 'y' and again != 'Y' and again != 'yes':
