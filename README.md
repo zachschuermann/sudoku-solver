@@ -5,7 +5,17 @@
 
 CLI Sudoku solver implemented in python with the python API for Z3 SMT solver.
 
-## Install
+## Install and Run
+```bash
+$ pip install sudoku-solve
+$ sudoku-solve 
+```
+#### Supports Input Redirection
+```bash
+$ sudoku-solve < puzzle.txt
+```
+
+## Building
 ```bash
 $ python3 -m venv env
 $ source env/bin/activate
