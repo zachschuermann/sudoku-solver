@@ -48,6 +48,7 @@ class Sudoku:
         start = time.perf_counter()
         check = s.check()
         end = time.perf_counter()
+        runtime = (end - start)*1000
 
         if check == sat:
             self.model = s.model()
@@ -58,10 +59,10 @@ class Sudoku:
                     row.append(self.model.evaluate(cells[i][j]))
                 matrix.append(row)
             solved = Sudoku(data=matrix)
-            return solved, (end - start)*1000
+            return solved, runtime
         else:
             self.model = check
-            return None, None
+            return None, runtime
 
     def read_init(self, solver, cells):
         for i in range(9):
@@ -91,5 +92,38 @@ class TestSolver(unittest.TestCase):
         self.assertIsNotNone(solved)
 
 if __name__ == '__main__':
-    print("Hello!")
-    
+    print("Hello! Enter your puzzle below, one line at a time with '0' for empty.")
+    while True:
+        input_matrix = []
+        for _ in range(9):
+            input_matrix.append(input())
+
+        data_matrix = []
+        for row in input_matrix:
+            data_matrix.append([int(x) if int(x) > 0 else -1 for x in row])
+
+        # try to make object
+        puzzle = Sudoku(data=data_matrix)
+        if not puzzle.data:
+            print("Invalid input, please try again")
+            continue
+        print("Running solver...")
+        solved, timer = puzzle.solve()
+        if solved is not None:
+            print("Solved: ")
+            print()
+            print(solved)
+            print("Solved in {} ms".format(timer))
+            print()
+        else:
+            print("Unable to solve.")
+            print()
+            print("Ran in {} ms".format(timer))
+            print()
+        again = input("Again? [y/N]")
+        if again != 'y' and again != 'Y' and again != 'yes':
+            break
+        else:
+            print("Enter your puzzle again!")
+            
+        
