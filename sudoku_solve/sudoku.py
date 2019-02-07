@@ -102,7 +102,7 @@ class TestSolver(unittest.TestCase):
         print("Solved in {} ms".format(time))
         self.assertIsNotNone(solved)
 
-if __name__ == '__main__':
+def main():
     print("Hello! Enter your puzzle below, one line at a time with '0' for empty.")
     while True:
         input_matrix = []
@@ -142,3 +142,5 @@ if __name__ == '__main__':
             print("Enter your puzzle again!")
             
         
+if __name__ == '__main__':
+    main()

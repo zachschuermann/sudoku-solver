@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="sudoku-solve",
-    version="0.0.3",
+    version="0.1.0",
     author="Zach Schuermann",
     author_email="zachary.schuermann@gmail.com",
     description="A small sudoku solver",
@@ -18,5 +18,11 @@ setuptools.setup(
         "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
         "Operating System :: OS Independent",
     ],
-    scripts=["sudoku_solve/sudoku.py"],
+    install_requires=["z3-solver",
+                     ],
+    entry_points={
+        'console_scripts': [
+            'sudoku-solve=sudoku_solve.sudoku:main',
+        ],
+    },
 )
