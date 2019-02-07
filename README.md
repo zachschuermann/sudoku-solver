@@ -1,7 +1,7 @@
 # Sudoku Solver
 [![Build Status](https://img.shields.io/travis/com/schuermannator/sudoku-solver.svg?style=flat-square)](https://travis-ci.com/schuermannator/sudoku-solver)
-[![PyPI Status](https://img.shields.io/pypi/v/sudoku-solve.svg?colorB=blue&style=flat-square)](https://pypi.org/project/sudoku-solve/)
 [![Coverage Report](https://img.shields.io/coveralls/github/schuermannator/sudoku-solver.svg?style=flat-square)](https://coveralls.io/github/schuermannator/sudoku-solver)
+[![PyPI Status](https://img.shields.io/pypi/v/sudoku-solve.svg?colorB=blue&style=flat-square)](https://pypi.org/project/sudoku-solve/)
 
 CLI Sudoku solver implemented in python with the python API for Z3 SMT solver.
 
