@@ -1,4 +1,6 @@
 # Sudoku Solver
+[![Build Status](https://travis-ci.com/schuermannator/sudoku-solver.svg?branch=master)](https://travis-ci.com/schuermannator/sudoku-solver)  
+
 CLI Sudoku solver implemented in python with the python API for Z3 SMT solver.
 
 ## Install
@@ -25,4 +27,5 @@ $ python -m unittest sudoku
 ## Distributing
 ```bash
 $ python setup.py sdist bdist_wheel
+$ python -m twine upload dist/*
 ```

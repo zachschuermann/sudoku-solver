@@ -4,7 +4,7 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="sudoku-solver-schuermannator",
+    name="sudoku-solver",
     version="0.0.1",
     author="Zach Schuermann",
     author_email="zachary.schuermann@gmail.com",
